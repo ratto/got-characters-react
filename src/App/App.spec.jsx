@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import { App } from './index.tsx';
+import { App } from './index';
 
 describe('<App />', () => {
   it('should render learn react link', () => {
