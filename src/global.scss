@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Sedan+SC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Reddit+Sans:ital,wght@0,200..900;1,200..900&family=Sedan+SC&display=swap');
+
+$background-color: #e0e1dd;
+$dark-color: #1b263b;
+$darker-color: darken($dark-color, 5%);
+$light-color: #415a77;
+$lighten-color: lighten($light-color, 50%);
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Reddit Sans', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva,
+    Verdana, sans-serif;
+  background-color: $background-color;
+}
+
+h1 {
+  font-family: 'Sedan SC', 'Times New Roman', Times, serif;
+  color: $darker-color;
+}
