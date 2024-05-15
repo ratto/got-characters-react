@@ -1,0 +1,12 @@
+label {
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+.character-card {
+  box-shadow: 2.5px 2.5px 15px;
+
+  & img {
+    height: 12rem;
+  }
+}

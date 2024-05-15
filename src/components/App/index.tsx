@@ -19,7 +19,7 @@ const App = () => {
   }, [handleLoadCharacters]);
 
   return (
-    <Container fluid as={'main'}>
+    <Container fluid as={'main'} className="my-2">
       <h1>Game of Thrones Character List</h1>
       <CharactersDeck characters={characters} />
     </Container>
