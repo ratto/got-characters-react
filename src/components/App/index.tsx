@@ -1,17 +1,29 @@
-import { useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { Container } from 'react-bootstrap';
-import { CharacterCard } from '../CharacterCard';
+import { loadCharacters } from '../../utils/load-characters';
+import { CharactersDeck } from '../CharactersDeck';
+import Character from '../../types/Character';
 import './style.scss';
 
-function App() {
-  const [count, setCount] = useState(0);
+const App = () => {
+  const [characters, setCharacters] = useState([] as Character[]);
+
+  const handleLoadCharacters = useCallback(async () => {
+    const characterList = await loadCharacters();
+
+    setCharacters(characterList);
+  }, []);
+
+  useEffect(() => {
+    handleLoadCharacters();
+  }, [handleLoadCharacters]);
 
   return (
     <Container fluid as={'main'}>
       <h1>Game of Thrones Character List</h1>
-      <CharacterCard count={count} setCountFn={() => setCount(count => count + 1)} />
+      <CharactersDeck characters={characters} />
     </Container>
   );
-}
+};
 
 export default App;

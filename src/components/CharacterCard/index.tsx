@@ -1,20 +1,28 @@
-import { Button, Card, CardBody } from 'react-bootstrap';
+import { Card, CardBody, Col, Row, Image, Form } from 'react-bootstrap';
 import './style.scss';
+import Character from '../../types/Character';
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const CharacterCard = (props: { count: number; setCountFn: any }) => {
-  const count = props.count;
-  const setCountFn = props.setCountFn;
+export const CharacterCard = (props: { character: Character }) => {
+  const character: Character = props.character;
 
   return (
     <Card>
-      <CardBody className="d-flex flex-column align-items-center">
-        <Button variant="light" onClick={setCountFn}>
-          count is {count}
-        </Button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
+      <CardBody>
+        <Row>
+          <Col>
+            <Image src={character.imageUrl} roundedCircle />
+          </Col>
+          <Col>
+            <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
+              <Form.Label column sm="2">
+                Name
+              </Form.Label>
+              <Col sm="10">
+                <Form.Control plaintext readOnly defaultValue={`${character.firstName} ${character.lastName}`} />
+              </Col>
+            </Form.Group>
+          </Col>
+        </Row>
       </CardBody>
     </Card>
   );
