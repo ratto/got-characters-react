@@ -10,7 +10,7 @@ export const CharactersDeck = (props: { characters: Character[] }) => {
     <Row className="g-4">
       {characters.map(character => {
         return (
-          <Col sm={6}>
+          <Col sm={12} lg={6}>
             <CharacterCard key={character.id} character={character} />
           </Col>
         );

@@ -9,28 +9,28 @@ export const CharacterCard = (props: { character: Character }) => {
     <Card className="character-card">
       <CardBody>
         <Row className="align-items-center">
-          <Col sm="3">
+          <Col xs={12} sm={4} md={5} xl={4}>
             <Image fluid src={character.imageUrl} rounded />
           </Col>
           <Col>
             <Form.Group as={Row} controlId="formPlaintextName">
-              <Form.Label column sm="2">
+              <Form.Label column xs={3} lg={4} xl={3}>
                 Name
               </Form.Label>
-              <Col sm="10">
+              <Col xs={9} lg={8} xl={9}>
                 <Form.Control plaintext readOnly defaultValue={`${character.firstName} ${character.lastName}`} />
               </Col>
             </Form.Group>
             <Form.Group as={Row} controlId="formPlaintextTitle">
-              <Col sm="12">
+              <Col sm={12}>
                 <Form.Control plaintext readOnly defaultValue={`${character.title}`} />
               </Col>
             </Form.Group>
             <Form.Group as={Row} controlId="formPlaintextFamily">
-              <Form.Label column sm="2">
+              <Form.Label column xs={3} lg={4} xl={3}>
                 Family
               </Form.Label>
-              <Col sm="10">
+              <Col xs={9} lg={8} xl={9}>
                 <Form.Control plaintext readOnly defaultValue={`${character.family}`} />
               </Col>
             </Form.Group>
